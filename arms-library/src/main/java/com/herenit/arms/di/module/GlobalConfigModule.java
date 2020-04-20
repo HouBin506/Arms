@@ -20,10 +20,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 import com.herenit.arms.http.BaseUrl;
 import com.herenit.arms.http.GlobalHttpHandler;
-import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
+//import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
 import com.herenit.arms.http.log.DefaultFormatPrinter;
 import com.herenit.arms.http.log.FormatPrinter;
 import com.herenit.arms.http.log.RequestInterceptor;
@@ -66,7 +66,7 @@ import okhttp3.internal.Util;
 public class GlobalConfigModule {
     private HttpUrl mApiUrl;
     private BaseUrl mBaseUrl;
-    private BaseImageLoaderStrategy mLoaderStrategy;
+//    private BaseImageLoaderStrategy mLoaderStrategy;
     private GlobalHttpHandler mHandler;
     private List<Interceptor> mInterceptors;
     private ResponseErrorListener mErrorListener;
@@ -83,7 +83,7 @@ public class GlobalConfigModule {
     private GlobalConfigModule(Builder builder) {
         this.mApiUrl = builder.apiUrl;
         this.mBaseUrl = builder.baseUrl;
-        this.mLoaderStrategy = builder.loaderStrategy;
+//        this.mLoaderStrategy = builder.loaderStrategy;
         this.mHandler = builder.handler;
         this.mInterceptors = builder.interceptors;
         this.mErrorListener = builder.responseErrorListener;
@@ -126,17 +126,17 @@ public class GlobalConfigModule {
         return mApiUrl == null ? HttpUrl.parse("https://api.github.com/") : mApiUrl;
     }
 
-    /**
-     * 提供图片加载框架,默认使用 {@link Glide}
-     *
-     * @return
-     */
-    @Singleton
-    @Provides
-    @Nullable
-    BaseImageLoaderStrategy provideImageLoaderStrategy() {
-        return mLoaderStrategy;
-    }
+//    /**
+//     * 提供图片加载框架,默认使用 {@link Glide}
+//     *
+//     * @return
+//     */
+//    @Singleton
+//    @Provides
+//    @Nullable
+//    BaseImageLoaderStrategy provideImageLoaderStrategy() {
+//        return mLoaderStrategy;
+//    }
 
     /**
      * 提供处理 Http 请求和响应结果的处理类
@@ -249,7 +249,7 @@ public class GlobalConfigModule {
     public static final class Builder {
         private HttpUrl apiUrl;
         private BaseUrl baseUrl;
-        private BaseImageLoaderStrategy loaderStrategy;
+//        private BaseImageLoaderStrategy loaderStrategy;
         private GlobalHttpHandler handler;
         private List<Interceptor> interceptors;
         private ResponseErrorListener responseErrorListener;
@@ -279,10 +279,10 @@ public class GlobalConfigModule {
             return this;
         }
 
-        public Builder imageLoaderStrategy(BaseImageLoaderStrategy loaderStrategy) {//用来请求网络图片
-            this.loaderStrategy = loaderStrategy;
-            return this;
-        }
+//        public Builder imageLoaderStrategy(BaseImageLoaderStrategy loaderStrategy) {//用来请求网络图片
+//            this.loaderStrategy = loaderStrategy;
+//            return this;
+//        }
 
         public Builder globalHttpHandler(GlobalHttpHandler handler) {//用来处理http响应结果
             this.handler = handler;
