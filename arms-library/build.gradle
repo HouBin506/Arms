@@ -39,6 +39,8 @@ dependencies {
         exclude module: 'support-annotations'
     }
     api rootProject.ext.dependencies["annotations"]
+    //分包
+    implementation rootProject.ext.dependencies["multidex"]
 
     //view
     compileOnly rootProject.ext.dependencies["autolayout"]

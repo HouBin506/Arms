@@ -18,6 +18,7 @@ package com.herenit.arms.base;
 import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.multidex.MultiDexApplication;
 
 import com.herenit.arms.base.delegate.AppDelegate;
 import com.herenit.arms.base.delegate.AppLifecycles;
@@ -40,7 +41,7 @@ import com.herenit.arms.utils.Preconditions;
  * <a href="https://github.com/herenitYanCoding">Follow me</a>
  * ================================================
  */
-public class BaseApplication extends Application implements App {
+public class BaseApplication extends MultiDexApplication implements App {
     private AppLifecycles mAppDelegate;
 
     /**
