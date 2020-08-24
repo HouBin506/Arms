@@ -70,9 +70,9 @@ public class BaseApplication extends MultiDexApplication implements App {
      */
     @Override
     public void onTerminate() {
-        super.onTerminate();
         if (mAppDelegate != null)
             this.mAppDelegate.onTerminate(this);
+        super.onTerminate();
     }
 
     /**
