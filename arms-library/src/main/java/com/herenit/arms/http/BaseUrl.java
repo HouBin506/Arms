@@ -15,7 +15,7 @@
  */
 package com.herenit.arms.http;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import okhttp3.HttpUrl;
 

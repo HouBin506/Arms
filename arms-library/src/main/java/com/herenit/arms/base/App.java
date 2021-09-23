@@ -15,7 +15,8 @@
  */
 package com.herenit.arms.base;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import com.herenit.arms.di.component.AppComponent;
 

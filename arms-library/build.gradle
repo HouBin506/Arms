@@ -19,100 +19,114 @@ android {
     }
 
     buildTypes {
-        product {
+        debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     //support
-    api(rootProject.ext.dependencies["support-v4"]) {
-        exclude module: 'support-annotations'
+    api rootProject.ext.dependencies["support-v4"]
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["support-annotations"]
+    api rootProject.ext.dependencies["support-content"]
+    api rootProject.ext.dependencies["recyclerview-v7"]
+    api rootProject.ext.dependencies["design"]
+    //rxjava
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxandroid
+    //rx管理View的生命周期
+    api(rootProject.ext.dependencies.rxlifecycle) {
+        exclude group: 'com.android.support'
     }
-    api(rootProject.ext.dependencies["appcompat-v7"]) {
-        exclude module: 'support-annotations'
+    api(rootProject.ext.dependencies["rxlifecycle-components"]) {
+        exclude group: 'com.android.support'
     }
-    compileOnly rootProject.ext.dependencies["design"]
-    api(rootProject.ext.dependencies["recyclerview-v7"]) {
-        exclude module: 'support-annotations'
+    //rxbinding
+    api(rootProject.ext.dependencies.rxbinding) {
+        exclude group: 'com.android.support'
     }
-    api rootProject.ext.dependencies["annotations"]
-    //分包
-    implementation rootProject.ext.dependencies["multidex"]
-
-    //view
-    compileOnly rootProject.ext.dependencies["autolayout"]
-    api(rootProject.ext.dependencies["butterknife"]) {
-        exclude module: 'support-annotations'
-        exclude module: 'support-compat'
+    //rx权限请求
+    api(rootProject.ext.dependencies.rxpermissions) {
+        exclude group: 'com.android.support'
     }
-
-    //rx
-    api rootProject.ext.dependencies["rxjava2"]
-    api(rootProject.ext.dependencies["rxandroid2"]) {
-        exclude module: 'rxjava'
-    }
+    //rx缓存
     api(rootProject.ext.dependencies["rxcache2"]) {
         exclude module: 'rxjava'
         exclude module: 'dagger'
         exclude module: 'api'
     }
-    implementation(rootProject.ext.dependencies["rxcache-jolyglot-gson"]) {
+    api(rootProject.ext.dependencies["rxcache-jolyglot-gson"]) {
         exclude module: 'gson'
     }
-    api(rootProject.ext.dependencies["rxlifecycle2"]) {
-        exclude module: 'rxjava'
-        exclude module: 'jsr305'
-    }
-    api(rootProject.ext.dependencies["rxlifecycle2-android"]) {
-        exclude module: 'support-annotations'
-        exclude module: 'rxjava'
-        exclude module: 'rxandroid'
-        exclude module: 'rxlifecycle'
-    }
-    api(rootProject.ext.dependencies["rxpermissions2"]) {
-        exclude module: 'rxjava'
-        exclude module: 'support-annotations'
-    }
-    api rootProject.ext.dependencies['rxerrorhandler2']
 
     //network
-    api(rootProject.ext.dependencies["retrofit"]) {
-        exclude module: 'okhttp'
-        exclude module: 'okio'
+    api rootProject.ext.dependencies.okhttp
+    api rootProject.ext.dependencies.retrofit
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies['rxerrorhandler2']
+    //json解析
+    api rootProject.ext.dependencies.gson
+    //material-dialogs
+    api(rootProject.ext.dependencies["material-dialogs-core"]) {
+        exclude group: 'com.android.support'
     }
-    implementation(rootProject.ext.dependencies["retrofit-converter-gson"]) {
-        exclude module: 'gson'
-        exclude module: 'okhttp'
-        exclude module: 'okio'
-        exclude module: 'retrofit'
+    api(rootProject.ext.dependencies["material-dialogs-commons"]) {
+        exclude group: 'com.android.support'
     }
-    implementation(rootProject.ext.dependencies["retrofit-adapter-rxjava2"]) {
-        exclude module: 'rxjava'
-        exclude module: 'okhttp'
-        exclude module: 'retrofit'
-        exclude module: 'okio'
+    //glide图片加载库
+    implementation (rootProject.ext.dependencies.glide){
+        exclude group: 'com.android.support'
     }
-    api rootProject.ext.dependencies["okhttp3"]
-    compileOnly rootProject.ext.dependencies["glide"]
-    annotationProcessor(rootProject.ext.dependencies["glide-compiler"]) {
-        exclude module: 'jsr305'
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    //recyclerview的databinding套装
+    api(rootProject.ext.dependencies.bindingcollectionadapter) {
+        exclude group: 'com.android.support'
     }
-
-    //tools
-    compileOnly rootProject.ext.dependencies["javax.annotation"]
+    api(rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"]) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["bindingcollectionadapter-viewpager2"]) {
+        exclude group: 'com.android.support'
+    }
+    //Google LiveData和ViewModel组件
+    api rootProject.ext.dependencies["lifecycle-extensions"]
+    annotationProcessor rootProject.ext.dependencies["lifecycle-compiler"]
+    //dagger2
     api rootProject.ext.dependencies["dagger2"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
-    compileOnly rootProject.ext.dependencies["androideventbus"]
-    compileOnly rootProject.ext.dependencies["eventbus"]
-    api rootProject.ext.dependencies["gson"]
-
     //test
     api rootProject.ext.dependencies["timber"]
-    //SDK 版本低于26.1.0时，需要添加android.arch.lifecycle:extensions:1.0.0-alpha4，才能使用lifecycle框架
-    implementation(rootProject.ext.dependencies["lifecycle-extensions"])
+
+    //阿里路由框架
+    api rootProject.ext.dependencies["arouter-api"]
+    //butterknife框架
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
+        exclude module: 'support-annotations'
+    }
+    //view
+    compileOnly rootProject.ext.dependencies["autolayout"]
+
+    //分包
+    api rootProject.ext.dependencies["multidex"]
+    //通信
+    compileOnly rootProject.ext.dependencies["androideventbus"]
+    compileOnly rootProject.ext.dependencies["eventbus"]
+
+    //使用一行代码监听 Retrofit／Okhttp 上传下载进度监听,以及 Glide 加载进度监听,
+    api rootProject.ext.dependencies["progressmanager"]
+    //让 Retrofit 同时支持多个 BaseUrl 以及动态改变 BaseUrl
+    api rootProject.ext.dependencies["retrofit-url-manager"]
 }
 //打包aar
 //uploadArchives {

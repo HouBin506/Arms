@@ -15,14 +15,15 @@
  */
 package com.herenit.arms.mvp;
 
+import static com.herenit.arms.utils.Preconditions.checkNotNull;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.herenit.arms.utils.ArmsUtils;
-
-import static com.herenit.arms.utils.Preconditions.checkNotNull;
 
 /**
  * ================================================

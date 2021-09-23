@@ -24,8 +24,6 @@ import com.herenit.arms.base.delegate.AppDelegate;
 import com.herenit.arms.di.module.AppModule;
 import com.herenit.arms.di.module.ClientModule;
 import com.herenit.arms.di.module.GlobalConfigModule;
-//import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
-//import com.herenit.arms.http.imageloader.ImageLoader;
 import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
 import com.herenit.arms.http.imageloader.ImageLoader;
 import com.herenit.arms.integration.AppManager;

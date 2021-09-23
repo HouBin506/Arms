@@ -15,7 +15,7 @@
  */
 package com.herenit.arms.http.log;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.herenit.arms.di.module.GlobalConfigModule;
 import com.herenit.arms.http.GlobalHttpHandler;

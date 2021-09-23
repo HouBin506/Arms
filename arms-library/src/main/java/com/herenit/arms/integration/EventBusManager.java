@@ -15,10 +15,10 @@
  */
 package com.herenit.arms.integration;
 
-import java.lang.reflect.Method;
-
 import static com.herenit.arms.base.Platform.DEPENDENCY_ANDROID_EVENTBUS;
 import static com.herenit.arms.base.Platform.DEPENDENCY_EVENTBUS;
+
+import java.lang.reflect.Method;
 
 /**
  * ================================================

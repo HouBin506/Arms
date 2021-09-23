@@ -1,6 +1,7 @@
 package com.herenit.arms.base.adapter.lv.base;
 
-import android.support.v4.util.SparseArrayCompat;
+
+import androidx.collection.SparseArrayCompat;
 
 import com.herenit.arms.base.adapter.lv.ViewHolder;
 import com.herenit.arms.utils.Preconditions;

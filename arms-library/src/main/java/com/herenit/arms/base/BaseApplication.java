@@ -15,10 +15,10 @@
  */
 package com.herenit.arms.base;
 
-import android.app.Application;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.multidex.MultiDexApplication;
+
+import androidx.annotation.NonNull;
+import androidx.multidex.MultiDexApplication;
 
 import com.herenit.arms.base.delegate.AppDelegate;
 import com.herenit.arms.base.delegate.AppLifecycles;

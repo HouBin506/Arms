@@ -18,7 +18,8 @@ package com.herenit.arms.integration.cache;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.support.v4.app.Fragment;
+
+import androidx.fragment.app.Fragment;
 
 import com.herenit.arms.di.component.AppComponent;
 import com.herenit.arms.integration.RepositoryManager;

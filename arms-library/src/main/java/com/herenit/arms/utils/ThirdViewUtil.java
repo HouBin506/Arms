@@ -15,14 +15,20 @@
  */
 package com.herenit.arms.utils;
 
+import static com.herenit.arms.base.Platform.DEPENDENCY_AUTO_LAYOUT;
+import static com.herenit.arms.base.delegate.ActivityDelegate.LAYOUT_FRAMELAYOUT;
+import static com.herenit.arms.base.delegate.ActivityDelegate.LAYOUT_LINEARLAYOUT;
+import static com.herenit.arms.base.delegate.ActivityDelegate.LAYOUT_RELATIVELAYOUT;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.zhy.autolayout.AutoFrameLayout;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -30,11 +36,6 @@ import com.zhy.autolayout.AutoRelativeLayout;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
-import static com.herenit.arms.base.Platform.DEPENDENCY_AUTO_LAYOUT;
-import static com.herenit.arms.base.delegate.ActivityDelegate.LAYOUT_FRAMELAYOUT;
-import static com.herenit.arms.base.delegate.ActivityDelegate.LAYOUT_LINEARLAYOUT;
-import static com.herenit.arms.base.delegate.ActivityDelegate.LAYOUT_RELATIVELAYOUT;
 
 /**
  * ================================================

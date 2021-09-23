@@ -15,6 +15,8 @@
  */
 package com.herenit.arms.integration;
 
+import static com.herenit.arms.base.Platform.DEPENDENCY_SUPPORT_DESIGN;
+
 import android.app.Activity;
 import android.app.Application;
 import android.app.Dialog;
@@ -22,10 +24,11 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.herenit.arms.base.delegate.AppLifecycles;
 import com.herenit.arms.utils.ArmsUtils;
 
@@ -38,8 +41,6 @@ import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Action;
 import timber.log.Timber;
-
-import static com.herenit.arms.base.Platform.DEPENDENCY_SUPPORT_DESIGN;
 
 /**
  * ================================================

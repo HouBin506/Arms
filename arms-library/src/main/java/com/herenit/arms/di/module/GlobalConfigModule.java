@@ -16,15 +16,14 @@
 package com.herenit.arms.di.module;
 
 import android.app.Application;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-//import com.bumptech.glide.Glide;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
 import com.herenit.arms.http.BaseUrl;
 import com.herenit.arms.http.GlobalHttpHandler;
-//import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
 import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
 import com.herenit.arms.http.log.DefaultFormatPrinter;
 import com.herenit.arms.http.log.FormatPrinter;
