@@ -1,5 +1,4 @@
 ext {
-
     configField = [
             isModule: "true"
     ]
