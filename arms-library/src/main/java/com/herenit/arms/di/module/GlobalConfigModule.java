@@ -21,7 +21,6 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.bumptech.glide.Glide;
 import com.herenit.arms.http.BaseUrl;
 import com.herenit.arms.http.GlobalHttpHandler;
 import com.herenit.arms.http.imageloader.BaseImageLoaderStrategy;
@@ -128,7 +127,7 @@ public class GlobalConfigModule {
     }
 
     /**
-     * 提供图片加载框架,默认使用 {@link Glide}
+     * 提供图片加载框架,默认使用 {}
      *
      * @return
      */
