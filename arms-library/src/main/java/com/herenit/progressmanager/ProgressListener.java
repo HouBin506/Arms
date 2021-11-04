@@ -13,32 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.herenit.retrofiturlmanager.demo.api;
+package com.herenit.progressmanager;
 
-import static com.herenit.retrofiturlmanager.demo.api.Api.DOUBAN_DOMAIN_NAME;
-import static com.herenit.urlmanager.RetrofitUrlManager.DOMAIN_NAME_HEADER;
 
-import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.http.GET;
-import retrofit2.http.Headers;
-import retrofit2.http.Path;
+import com.herenit.progressmanager.body.ProgressInfo;
 
 /**
  * ================================================
- * Created by JessYan on 19/07/2017 11:50
+ * Created by JessYan on 02/06/2017 18:23
  * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-public interface ThreeApiService {
+public interface ProgressListener {
     /**
-     * 如果不需要多个 BaseUrl, 继续使用初始化时传入 Retrofit 中的默认 BaseUrl, 就不要加上 DOMAIN_NAME_HEADER 这个 Header
+     * 进度监听
+     *
+     * @param progressInfo 关于进度的所有信息
      */
-    @Headers({DOMAIN_NAME_HEADER + DOUBAN_DOMAIN_NAME})
+    void onProgress(ProgressInfo progressInfo);
+
     /**
-     * 可以通过在注解里给全路径达到使用不同的 BaseUrl, 但是这样无法在 App 运行时动态切换 BaseUrl
+     * 错误监听
+     *
+     * @param id 进度信息的 id
+     * @param e  错误
      */
-    @GET("/v2/book/{id}")
-    Observable<ResponseBody> getBook(@Path("id") int id);
+    void onError(long id, Exception e);
 }

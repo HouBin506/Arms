@@ -21,7 +21,7 @@ import static com.herenit.retrofiturlmanager.demo.api.Api.APP_DEFAULT_DOMAIN;
 import com.herenit.retrofiturlmanager.demo.api.OneApiService;
 import com.herenit.retrofiturlmanager.demo.api.ThreeApiService;
 import com.herenit.retrofiturlmanager.demo.api.TwoApiService;
-import com.herenit.url_manager.RetrofitUrlManager;
+import com.herenit.urlmanager.RetrofitUrlManager;
 
 import java.util.concurrent.TimeUnit;
 

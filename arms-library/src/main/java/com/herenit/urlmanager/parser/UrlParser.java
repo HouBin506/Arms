@@ -13,32 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.herenit.retrofiturlmanager.demo.api;
+package com.herenit.urlmanager.parser;
 
-import static com.herenit.retrofiturlmanager.demo.api.Api.DOUBAN_DOMAIN_NAME;
-import static com.herenit.urlmanager.RetrofitUrlManager.DOMAIN_NAME_HEADER;
 
-import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.http.GET;
-import retrofit2.http.Headers;
-import retrofit2.http.Path;
+import com.herenit.urlmanager.RetrofitUrlManager;
+
+import okhttp3.HttpUrl;
+import okhttp3.Request;
 
 /**
  * ================================================
- * Created by JessYan on 19/07/2017 11:50
+ * Url解析器
+ * <p>
+ * Created by JessYan on 17/07/2017 17:44
  * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-public interface ThreeApiService {
+
+public interface UrlParser {
+
     /**
-     * 如果不需要多个 BaseUrl, 继续使用初始化时传入 Retrofit 中的默认 BaseUrl, 就不要加上 DOMAIN_NAME_HEADER 这个 Header
+     * 这里可以做一些初始化操作
+     *
+     * @param retrofitUrlManager {@link RetrofitUrlManager}
      */
-    @Headers({DOMAIN_NAME_HEADER + DOUBAN_DOMAIN_NAME})
+    void init(RetrofitUrlManager retrofitUrlManager);
+
     /**
-     * 可以通过在注解里给全路径达到使用不同的 BaseUrl, 但是这样无法在 App 运行时动态切换 BaseUrl
+     * 将 {@link RetrofitUrlManager#mDomainNameHub} 中映射的 URL 解析成完整的{@link HttpUrl}
+     * 用来替换 @{@link Request#url} 达到动态切换 URL
+     *
+     * @param domainUrl 用于替换的 URL 地址
+     * @param url       旧 URL 地址
+     * @return
      */
-    @GET("/v2/book/{id}")
-    Observable<ResponseBody> getBook(@Path("id") int id);
+    HttpUrl parseUrl(HttpUrl domainUrl, HttpUrl url);
 }

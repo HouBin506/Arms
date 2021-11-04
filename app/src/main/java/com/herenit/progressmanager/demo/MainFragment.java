@@ -29,9 +29,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.herenit.armsapp.R;
-import com.herenit.progressmanager_library.ProgressListener;
-import com.herenit.progressmanager_library.ProgressManager;
-import com.herenit.progressmanager_library.body.ProgressInfo;
+import com.herenit.progressmanager.ProgressListener;
+import com.herenit.progressmanager.ProgressManager;
+import com.herenit.progressmanager.body.ProgressInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;

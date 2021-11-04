@@ -16,9 +16,9 @@
 package com.herenit.retrofiturlmanager.demo.api;
 
 import static com.herenit.retrofiturlmanager.demo.api.Api.GANK_DOMAIN_NAME;
-import static com.herenit.url_manager.RetrofitUrlManager.DOMAIN_NAME_HEADER;
+import static com.herenit.urlmanager.RetrofitUrlManager.DOMAIN_NAME_HEADER;
 
-import com.herenit.url_manager.RetrofitUrlManager;
+import com.herenit.urlmanager.RetrofitUrlManager;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;

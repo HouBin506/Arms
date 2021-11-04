@@ -25,11 +25,11 @@ import static com.herenit.retrofiturlmanager.demo.api.Api.GITHUB_DOMAIN_NAME;
 
 import android.app.Application;
 
-import com.herenit.progressmanager_library.ProgressManager;
-import com.herenit.url_manager.RetrofitUrlManager;
-import com.herenit.url_manager.parser.AdvancedUrlParser;
-import com.herenit.url_manager.parser.DomainUrlParser;
-import com.herenit.url_manager.parser.SuperUrlParser;
+import com.herenit.progressmanager.ProgressManager;
+import com.herenit.urlmanager.RetrofitUrlManager;
+import com.herenit.urlmanager.parser.AdvancedUrlParser;
+import com.herenit.urlmanager.parser.DomainUrlParser;
+import com.herenit.urlmanager.parser.SuperUrlParser;
 
 import okhttp3.OkHttpClient;
 

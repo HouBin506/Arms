@@ -1,4 +1,2 @@
 include ':app', ':arms-library'
 rootProject.name='ArmsApp'
-include ':retrofitUrlManager-library'
-include ':progressManager-library'

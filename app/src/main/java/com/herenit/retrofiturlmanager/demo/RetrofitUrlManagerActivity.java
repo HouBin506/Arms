@@ -32,11 +32,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.herenit.armsapp.R;
-import com.herenit.url_manager.RetrofitUrlManager;
-import com.herenit.url_manager.onUrlChangeListener;
-import com.herenit.url_manager.parser.AdvancedUrlParser;
-import com.herenit.url_manager.parser.DomainUrlParser;
-import com.herenit.url_manager.parser.SuperUrlParser;
+import com.herenit.urlmanager.RetrofitUrlManager;
+import com.herenit.urlmanager.onUrlChangeListener;
+import com.herenit.urlmanager.parser.AdvancedUrlParser;
+import com.herenit.urlmanager.parser.DomainUrlParser;
+import com.herenit.urlmanager.parser.SuperUrlParser;
 
 import java.io.IOException;
 
