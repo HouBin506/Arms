@@ -3,6 +3,7 @@
     package="com.herenit.armsapp">
 
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,6 +17,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.herenit.retrofiturlmanager.demo.RetrofitUrlManagerActivity"></activity>
+        <activity
+            android:name="com.herenit.progressmanager.demo.ProgressManagerActivity"
+            android:label="ProgressManager Base"></activity>
+        <activity
+            android:name="com.herenit.progressmanager.demo.AdvanceActivity"
+            android:label="ProgressManager Advance" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

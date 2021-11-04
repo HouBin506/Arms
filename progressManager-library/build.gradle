@@ -1,21 +1,24 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.library'
+}
 
 android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    useLibrary 'org.apache.http.legacy'
 
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
 
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     defaultConfig {
-        applicationId "com.herenit.armsapp"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
     }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -27,16 +30,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //test
-    testImplementation rootProject.ext.dependencies["junit"]
-
-    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
-
-    implementation project(path: ':arms-library')
-    implementation project(path: ':retrofitUrlManager-library')
-    implementation project(path: ':progressManager-library')
+    compileOnly rootProject.ext.dependencies["okhttp"]
 }

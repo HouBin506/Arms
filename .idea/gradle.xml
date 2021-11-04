@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/arms-library" />
+            <option value="$PROJECT_DIR$/progressManager-library" />
+            <option value="$PROJECT_DIR$/retrofitUrlManager-library" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

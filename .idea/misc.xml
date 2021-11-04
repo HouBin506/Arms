@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work/HerenIt/GitHub/ArmsApp/app/src/main/res/layout/activity_advance.xml" value="0.1634963768115942" />
         <entry key="..\:/Work/HerenIt/GitHub/ArmsApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Work/HerenIt/GitHub/ArmsApp/app/src/main/res/layout/activity_progress_manager.xml" value="0.1634963768115942" />
+        <entry key="..\:/Work/HerenIt/GitHub/ArmsApp/app/src/main/res/layout/activity_retrofit_url_manager.xml" value="0.12864583333333332" />
+        <entry key="..\:/Work/HerenIt/GitHub/ArmsApp/app/src/main/res/layout/fragment_main.xml" value="0.1634963768115942" />
       </map>
     </option>
   </component>
