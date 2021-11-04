@@ -33,10 +33,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //test
     testImplementation rootProject.ext.dependencies["junit"]
-
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
-
     implementation project(path: ':arms-library')
-    implementation project(path: ':retrofitUrlManager-library')
-    implementation project(path: ':progressManager-library')
 }
