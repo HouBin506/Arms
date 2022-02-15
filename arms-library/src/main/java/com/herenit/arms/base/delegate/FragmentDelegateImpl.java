@@ -59,9 +59,9 @@ public class FragmentDelegateImpl implements FragmentDelegate {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        iFragment.setupFragmentComponent(ArmsUtils.obtainAppComponentFromContext(mFragment.getActivity()));
         if (iFragment.useEventBus())//如果要使用eventbus请将此方法返回true
             EventBusManager.getInstance().register(mFragment);//注册到事件主线
-        iFragment.setupFragmentComponent(ArmsUtils.obtainAppComponentFromContext(mFragment.getActivity()));
     }
 
     @Override
